@@ -1,5 +1,5 @@
-from Funciones.Conversiones import *
-from Funciones.Validaciones_Carac import *
+from Operaciones.Conversiones import *
+from Validaciones.Validaciones_Carac import *
 
 
 def validar_legajo(legajo: str) -> bool:
@@ -61,7 +61,9 @@ def validar_nombre(nombre: str) -> bool:
 
 def validar_genero(genero: str) -> bool:
     '''
-     
+    La función va a validar que el género ingresado sea F, M o X.
+    Acepta tanto letras mayúsculas como minúsculas y realiza la
+    conversión a mayúscula antes de validar.
     
     Args:
         Recibe un str
@@ -72,24 +74,47 @@ def validar_genero(genero: str) -> bool:
     '''
     retorno = False
 
-#convertir tanto mayus como minusculas a mayus y ahi comprobar para que si pongo f o F igual me devuelva F
+    if len(genero) == 1: # Comprueba que se sea de un solo digito
+        
+        #Convierte a mayus para poder validar sin importar que ingrese
+        genero_mayus = convertir_mayus(genero) 
 
-    # if genero == "F" or genero == "M" or genero == "X":
-    #     retorno = True
-   
-    # elif genero == "f" or genero == "m" or genero == "x":
-    #     retorno = True 
+        if genero_mayus == "F" or genero_mayus == "M" or genero_mayus == "X":
+            retorno = True
     
     return retorno
 
 
 def validar_nota(nota: str) -> bool:
-    retorno = False
+    '''
+    La función primero valida que el que no sea un str vacio (' ') luego
+    valida que el caracter ingresado efectivamente sea un número haciendo
+    la llamada a la funcion es_numero. Si lo comprueba convierte el valor
+    a int para validar que sea un valor entre 1 y 10 (Notas validas).
 
-    if validar_legajo(nota) == True:
+    Args:
+        Recibe un str
+
+    Retorno:
+            Retorna un bool / True = La nota esta entre 1 y 10
+                            / False = NO es un valor int o 1 > nota > 10
+    '''
+    retorno = True
+
+    if len(nota) == 0:
+        retorno = False
+    else:
+        for i in nota:
+            valor = es_numero(i)
+
+            if valor == False:
+                retorno = False
+                break
+
+    if retorno == True:
         valor = int(nota)
 
-        if valor >= 1 and valor <= 10:
-            retorno = True
+        if valor < 1 or valor > 10:
+            retorno = False
 
     return retorno
