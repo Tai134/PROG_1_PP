@@ -1,51 +1,12 @@
-def es_letra(caracter: str) -> bool:
-    '''
-    La función va a corroborar que el valor ingresado sea una letra 
-    trabajando con comprobaciones en el codigo ASCII.
-    
-    Args: 
-        Recibe valores en forma de str
-    Returns:
-        Retorna un bool / True = es una letra
-                        / False = NO es una letra
-    '''    
-    retorno = False
-
-    if ord(caracter) >= 65 and ord(caracter) <= 90:
-        retorno = True
-    elif ord(caracter) >= 97 and ord(caracter) <= 122:
-        retorno = True
-    elif ord(caracter) == 32:
-        retorno = True
-
-    return retorno
-
-
-def es_numero(caracter: str) -> bool:
-    '''
-    La función va a corroborar que el valor ingresado sea un número
-    Para unificar la escritura y funcionamiento comparte sintaxis con
-    validacion de letras.
-    
-    Args: 
-        Recibe valores en forma de str
-    Returns:
-        Retorna un bool / True = es un número
-                        / False = NO es número
-    '''
-    retorno = False
-
-    if ord(caracter) >= 48 and ord(caracter) <= 57:
-        retorno = True
-
-    return retorno
+from Funciones.Conversiones import *
+from Funciones.Validaciones_Carac import *
 
 
 def validar_legajo(legajo: str) -> bool:
     '''
     La función va a validar que el valor ingresado para los legajos
-    sea correcto (números). Rompe el detectar que alguno o todos los str no son
-    un número -> L-68
+    sea correcto (números). Rompe el detectar que alguno o todos
+    los str no son un número -> L-29
     
     Args: 
         Recibe valores en forma de str
@@ -73,8 +34,8 @@ def validar_legajo(legajo: str) -> bool:
 def validar_nombre(nombre: str) -> bool:
     '''
     La función va a validar que el valor ingresado para los nombres
-    sea correcto (letras). Rompe el detectar que alguno o todos los str no son
-    letras -> L-96
+    sea correcto (letras). Rompe el detectar que alguno o todos los str
+    no son letras -> L-57
     
     Args: 
         Recibe valores en forma de str
@@ -100,8 +61,7 @@ def validar_nombre(nombre: str) -> bool:
 
 def validar_genero(genero: str) -> bool:
     '''
-    La función valido que el genero sea una de tres opciones unicamente.
-    Comprueba los unicos tres valores validos (F-M-X). Comprueba 
+     
     
     Args:
         Recibe un str
@@ -121,9 +81,6 @@ def validar_genero(genero: str) -> bool:
     #     retorno = True 
     
     return retorno
-
-prueba = validar_genero('f')
-print(prueba)
 
 
 def validar_nota(nota: str) -> bool:
