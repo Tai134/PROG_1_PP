@@ -1,6 +1,6 @@
 def ordenar_por_promedio(promedios: list, legajos: list, nombres: list,
                          generos: list, notas_1: list, notas_2: list,
-                         orden: str) -> tuple:
+                         orden: str) -> None:
     '''
     La función ordena las listas paralelas según el promedio de cada
     estudiante utilizando el método de ordenamiento burbuja.
@@ -16,7 +16,7 @@ def ordenar_por_promedio(promedios: list, legajos: list, nombres: list,
         orden (str): Tipo de ordenamiento, ASC o DESC.
 
     Returns:
-        Retorna las listas paralelas ordenadas dentro de una tupla.
+        No retorna un valor. Modifica las listas paralelas recibidas.
     '''
     cantidad = len(promedios)
 
@@ -54,5 +54,3 @@ def ordenar_por_promedio(promedios: list, legajos: list, nombres: list,
                 notas_2[j] = notas_2[j + 1]
                 notas_2[j + 1] = aux
 
-    retorno = (promedios, legajos, nombres, generos, notas_1, notas_2)
-    return retorno

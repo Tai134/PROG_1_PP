@@ -9,7 +9,7 @@ def calcular_promedio(nota_1: int, nota_2: int) -> float:
     Returns:
         Retorna el promedio de las dos notas como un número real.
     '''
-    promedio = (nota_1 + nota_2) / 2
+    promedio = round((nota_1 + nota_2) / 2, 2)
     return promedio
 
 

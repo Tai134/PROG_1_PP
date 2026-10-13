@@ -7,7 +7,8 @@ from Validaciones.Validaciones_Texto import validar_nota
 def solicitar_legajo() -> int:
     '''
     La función solicita un legajo y lo valida antes de devolverlo.
-    Repite la solicitud mientras el dato ingresado no sea válido.
+    Valida lo ingresado llamando a validar_legajo y repite la solicitud
+    mientras el dato ingresado no sea válido.
 
     Returns:
         Retorna el legajo validado como un número entero.
@@ -29,8 +30,9 @@ def solicitar_legajo() -> int:
 
 def solicitar_nombre() -> str:
     '''
-    La función solicita el apellido y nombre de un estudiante.
-    Repite la solicitud mientras el dato ingresado no sea válido.
+    La función solicita el apellido y nombre de un estudiante. Valida
+    llamando a validar_nombre y repite la solicitud mientras el dato
+    ingresado no sea válido.
 
     Returns:
         Retorna el apellido y nombre validado como un str.
@@ -53,7 +55,8 @@ def solicitar_nombre() -> str:
 def solicitar_genero() -> str:
     '''
     La función solicita el género de un estudiante y lo valida.
-    Repite la solicitud mientras el dato ingresado no sea válido.
+    Valida llamando a validar_genera y repite la solicitud mientras el
+    dato ingresado no sea válido.
 
     Returns:
         Retorna el género validado como un str.
@@ -62,7 +65,7 @@ def solicitar_genero() -> str:
     validacion = False
 
     while validacion == False:
-        genero = input("Ingrese el género (F, M o X): ")
+        genero = input("Ingrese el género (F - M - X): ")
         validacion = validar_genero(genero)
 
         if validacion == True:
@@ -73,19 +76,22 @@ def solicitar_genero() -> str:
     return retorno
 
 
-def solicitar_nota() -> int:
+def solicitar_nota(numero_nota: int) -> int:
     '''
     La función solicita una nota y la valida dentro del rango permitido.
-    Repite la solicitud mientras el dato ingresado no sea válido.
+    Valida llamando a validar_nota y repite la solicitud mientras el 
+    dato ingresado no sea válido.
 
     Returns:
+        numero_nota (int): Indica si se solicita la nota 1 o la nota 2.
+
         Retorna la nota validada como un número entero.
     '''
     retorno = 0
     validacion = False
 
     while validacion == False:
-        nota = input("Ingrese la nota (1 a 10): ")
+        nota = input(f"Ingrese la nota {numero_nota} (1 a 10): ")
         validacion = validar_nota(nota)
 
         if validacion == True:

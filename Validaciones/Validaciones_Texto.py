@@ -31,6 +31,28 @@ def validar_legajo(legajo: str) -> bool:
     return retorno
 
 
+def validar_legajo_repetido(legajo: int, legajos: list,
+                            cantidad_cargada: int) -> bool:
+    '''
+    La función valida que el legajo ingresado no se encuentre repetido
+    entre los legajos que ya fueron cargados.
+
+    Args:
+        Recibe el legajo y la lista de legajos cargados hasta el momento.
+
+    Returns:
+        Retorna True si el legajo no está repetido y False si ya existe.
+    '''
+    retorno = True
+
+    for i in range(cantidad_cargada):
+        if legajo == legajos[i]:
+            retorno = False
+            break
+
+    return retorno
+
+
 def validar_nombre(nombre: str) -> bool:
     '''
     La función va a validar que el valor ingresado para los nombres
@@ -46,15 +68,28 @@ def validar_nombre(nombre: str) -> bool:
     '''
     retorno = True
 
-    if len(nombre) == 0:
+    if len(nombre) == 0 or nombre[0] == " " or nombre[-1] == " " \
+            or " " not in nombre:
+        # Exige nombre y apellido y evita ' Pablo' y 'Juan'
         retorno = False
     else:
+        espacio_anterior = False
+
         for i in nombre:
+            if i == " " and espacio_anterior == True:
+                retorno = False
+                break
+
             valor = es_letra(i)
 
             if valor == False:
                 retorno = False
                 break # Rompe al encontrar un valor que NO es una letra
+
+            if i == " ":
+                espacio_anterior = True
+            else:
+                espacio_anterior = False
 
     return retorno
 

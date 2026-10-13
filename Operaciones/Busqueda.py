@@ -16,6 +16,6 @@ def buscar_por_legajo(legajo_buscado: int, legajos: list) -> int:
     for i in range(len(legajos)):
         if legajos[i] == legajo_buscado:
             indice_buscado = i
-            break
+            break # Cuando lo encuentra rompe y deja de buscar
 
     return indice_buscado
