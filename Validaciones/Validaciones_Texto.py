@@ -1,5 +1,6 @@
-from Operaciones.Conversiones import *
-from Validaciones.Validaciones_Carac import *
+from Operaciones.Conversiones import convertir_mayus
+from Validaciones.Validaciones_Carac import es_letra
+from Validaciones.Validaciones_Carac import es_numero
 
 
 def validar_legajo(legajo: str) -> bool:

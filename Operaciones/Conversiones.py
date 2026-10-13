@@ -1,4 +1,6 @@
-from Validaciones.Validaciones_Carac import *
+from Validaciones.Validaciones_Carac import es_minus
+from Validaciones.Validaciones_Carac import es_mayus
+from Validaciones.Validaciones_Carac import es_letra
 
 def convertir_minus(letra: str) -> str:
     validacion = es_minus(letra)
