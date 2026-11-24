@@ -359,19 +359,6 @@ def mostrar_frecuencias(frecuencias: list) -> None:
         print(f"{i + 1}\t{frecuencias[i]}")
 
 
-def separar_campos_csv(linea: str) -> list:
-    '''
-    La función quita el salto de línea y separa los campos por comas.
-
-    Args:
-        linea (str): Una fila de texto del archivo CSV.
-
-    Returns:
-        Retorna una lista con los campos separados por comas.
-    '''
-    return linea.strip().split(",")
-
-
 def cargar_csv(ruta: str, estudiantes: list) -> bool:
     '''
     La función lee el CSV, valida cada registro y lo guarda en la lista.
@@ -393,7 +380,8 @@ def cargar_csv(ruta: str, estudiantes: list) -> bool:
     cargado = True
     estudiantes_cargados = []
     for i in range(1, len(lineas)):
-        campos = separar_campos_csv(lineas[i])
+        linea = lineas[i].rstrip("\n")
+        campos = linea.split(",")
         if validar_campos_csv(campos, estudiantes_cargados) == True:
             notas = [0] * 5
             for j in range(5):

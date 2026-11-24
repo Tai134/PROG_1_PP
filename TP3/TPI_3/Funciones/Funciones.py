@@ -389,7 +389,8 @@ def cargar_csv(ruta: str, estudiantes: list) -> bool:
 
     cargado = True
     for i in range(1, len(lineas)):
-        campos = separar_campos_csv(lineas[i])
+        linea = lineas[i].rstrip("\n")
+        campos = linea.split(",")
         if validar_campos_csv(campos, estudiantes) == True:
             notas = [0] * 5
             for j in range(5):
@@ -405,19 +406,6 @@ def cargar_csv(ruta: str, estudiantes: list) -> bool:
             cargado = False
             break
     return cargado
-
-
-def separar_campos_csv(linea: str) -> list:
-    '''
-    La función quita el salto de línea y separa los campos por comas.
-
-    Args:
-        linea (str): Una fila de texto del archivo CSV.
-
-    Returns:
-        Retorna una lista con los campos separados por comas.
-    '''
-    return linea.strip().split(",")
 
 
 def guardar_json(estudiantes: list, ruta: str) -> bool:
