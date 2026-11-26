@@ -1,0 +1,145 @@
+[
+    {
+        "legajo": 10003,
+        "nombre": "MARIA PEREZ",
+        "genero": "F",
+        "notas": [
+            10,
+            9,
+            10,
+            8,
+            9
+        ],
+        "promedio": 9.2
+    },
+    {
+        "legajo": 10010,
+        "nombre": "BRUNO MARTINEZ",
+        "genero": "X",
+        "notas": [
+            9,
+            8,
+            10,
+            9,
+            9
+        ],
+        "promedio": 9.0
+    },
+    {
+        "legajo": 10001,
+        "nombre": "ANA GOMEZ",
+        "genero": "F",
+        "notas": [
+            8,
+            9,
+            7,
+            6,
+            10
+        ],
+        "promedio": 8.0
+    },
+    {
+        "legajo": 10006,
+        "nombre": "CARLOS RUIZ",
+        "genero": "M",
+        "notas": [
+            8,
+            8,
+            7,
+            9,
+            8
+        ],
+        "promedio": 8.0
+    },
+    {
+        "legajo": 10008,
+        "nombre": "DIEGO FERNANDEZ",
+        "genero": "M",
+        "notas": [
+            7,
+            6,
+            8,
+            7,
+            9
+        ],
+        "promedio": 7.4
+    },
+    {
+        "legajo": 10004,
+        "nombre": "JUAN SOSA",
+        "genero": "M",
+        "notas": [
+            6,
+            7,
+            6,
+            7,
+            6
+        ],
+        "promedio": 6.4
+    },
+    {
+        "legajo": 10007,
+        "nombre": "SOFIA TORRES",
+        "genero": "X",
+        "notas": [
+            4,
+            5,
+            3,
+            4,
+            3
+        ],
+        "promedio": 3.8
+    },
+    {
+        "legajo": 10002,
+        "nombre": "PEDRO LOPEZ",
+        "genero": "M",
+        "notas": [
+            3,
+            4,
+            5,
+            2,
+            3
+        ],
+        "promedio": 3.4
+    },
+    {
+        "legajo": 12345,
+        "nombre": "TAIEL EIRIN",
+        "genero": "M",
+        "notas": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "promedio": 3.0
+    },
+    {
+        "legajo": 10005,
+        "nombre": "LAURA DIAZ",
+        "genero": "F",
+        "notas": [
+            1,
+            2,
+            3,
+            4,
+            2
+        ],
+        "promedio": 2.4
+    },
+    {
+        "legajo": 10009,
+        "nombre": "ELENA CASTRO",
+        "genero": "F",
+        "notas": [
+            2,
+            3,
+            1,
+            2,
+            3
+        ],
+        "promedio": 2.2
+    }
+]
